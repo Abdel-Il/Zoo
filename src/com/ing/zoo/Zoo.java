@@ -26,13 +26,31 @@ public class Zoo {
         System.out.print("Voer uw command in: ");
 
         String input = scanner.nextLine();
-        if(input.equals(commands[0] + " henk"))
-        {
-            henk.sayHello();
+        switch (input) {
+            case "hello":
+                henk.sayHello();
+                elsa.sayHello();
+                dora.sayHello();
+                wally.sayHello();
+                marty.sayHello();
+                break;
+            case "give leaves":
+                elsa.eatLeaves();
+                dora.eatLeaves();
+                marty.eatLeaves();
+                break;
+            case "give meat":
+                henk.eatMeat();
+                dora.eatMeat();
+                wally.eatMeat();
         }
-        else
-        {
-            System.out.println("Unknown command: " + input);
-        }
+//        if(input.equals(commands[0] + " henk"))
+//        {
+//            henk.sayHello();
+//        }
+//        else
+//        {
+//            System.out.println("Unknown command: " + input);
+//        }
     }
 }
