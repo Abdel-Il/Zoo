@@ -21,6 +21,8 @@ public class Zoo {
         Pig dora = new Pig("dora");
         Tiger wally = new Tiger("wally");
         Zebra marty = new Zebra("marty");
+        Cat henry = new Cat("henry");
+        Dog max = new Dog("max");
 
         List<Animal> animals = new ArrayList<>();
         animals.add(henk);
@@ -28,10 +30,14 @@ public class Zoo {
         animals.add(dora);
         animals.add(wally);
         animals.add(marty);
+        animals.add(henry);
+        animals.add(max);
 
         List<Carnivore> carnivores = new ArrayList<>();
         carnivores.add(henk);
         carnivores.add(wally);
+        carnivores.add(henry);
+        carnivores.add(max);
 
         List<Herbivore> herbivores = new ArrayList<>();
         herbivores.add(elsa);
@@ -43,6 +49,8 @@ public class Zoo {
         List<PerformTrick> tricks = new ArrayList<>();
         tricks.add(wally);
         tricks.add(dora);
+        tricks.add(henry);
+        tricks.add(max);
 
         Scanner scanner = new Scanner(System.in);
         System.out.print("Voer uw command in: ");
@@ -88,6 +96,7 @@ public class Zoo {
                 for (PerformTrick t : tricks) {
                     t.performTrick();
                 }
+                break;
 
             default:
                 System.out.println("Unknown command: " + input);
