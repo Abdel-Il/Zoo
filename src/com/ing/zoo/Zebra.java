@@ -18,6 +18,11 @@ public class Zebra extends Herbivore{
         System.out.println(helloText);
     }
 
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
     public void eatLeaves()
     {
         eatText = "munch munch zank yee bra";

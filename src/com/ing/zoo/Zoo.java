@@ -1,5 +1,7 @@
 package com.ing.zoo;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Zoo {
@@ -22,35 +24,57 @@ public class Zoo {
         Zebra marty = new Zebra();
         marty.name = "marty";
 
+        List<Animal> animals = new ArrayList<>();
+        animals.add(henk);
+        animals.add(elsa);
+        animals.add(dora);
+        animals.add(wally);
+        animals.add(marty);
+
+        List<Carnivore> carnivores = new ArrayList<>();
+        carnivores.add(henk);
+        carnivores.add(wally);
+
+        List<Herbivore> herbivores = new ArrayList<>();
+        herbivores.add(elsa);
+        herbivores.add(marty);
+
+        List<Omnivore> omnivores = new ArrayList<>();
+        omnivores.add(dora);
+
         Scanner scanner = new Scanner(System.in);
         System.out.print("Voer uw command in: ");
 
         String input = scanner.nextLine();
         switch (input) {
             case "hello":
-                henk.sayHello();
-                elsa.sayHello();
-                dora.sayHello();
-                wally.sayHello();
-                marty.sayHello();
+                if (input.split(" ")[1] != null)
+                    for (Animal a : animals) {
+                        a.sayHello();
+                    } else {
+                        for (Animal a : animals) {
+                            if (a.getName().equals(input.split(" ")[1])) {
+                                a.sayHello();
+                            }
+                        }
+                }
                 break;
             case "give leaves":
-                elsa.eatLeaves();
-                dora.eatLeaves();
-                marty.eatLeaves();
+                for (Herbivore h : herbivores) {
+                    h.eatLeaves();
+                }
+                for (Omnivore o : omnivores) {
+                    o.eatLeaves();
+                }
                 break;
             case "give meat":
-                henk.eatMeat();
-                dora.eatMeat();
-                wally.eatMeat();
+                for (Carnivore c : carnivores) {
+                    c.eatMeat();
+                }
+                for (Omnivore o : omnivores) {
+                    o.eatMeat();
+                }
+                break;
         }
-//        if(input.equals(commands[0] + " henk"))
-//        {
-//            henk.sayHello();
-//        }
-//        else
-//        {
-//            System.out.println("Unknown command: " + input);
-//        }
     }
 }

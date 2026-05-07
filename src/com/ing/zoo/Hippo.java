@@ -15,6 +15,11 @@ public class Hippo extends Herbivore{
         System.out.println(helloText);
     }
 
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
     public void eatLeaves()
     {
         eatText = "munch munch lovely";

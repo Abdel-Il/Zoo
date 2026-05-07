@@ -18,6 +18,11 @@ public class Tiger extends Carnivore{
         System.out.println(helloText);
     }
 
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
     public void eatMeat()
     {
         eatText = "nomnomnom oink wubalubadubdub";

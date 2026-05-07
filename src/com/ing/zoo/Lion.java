@@ -16,6 +16,11 @@ public class Lion extends Carnivore {
     }
 
     @Override
+    public String getName() {
+        return this.name;
+    }
+
+    @Override
     public void eatMeat()
     {
         eatText = "nomnomnom thx mate";

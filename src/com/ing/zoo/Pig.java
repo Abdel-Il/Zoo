@@ -18,6 +18,11 @@ public class Pig extends Omnivore{
         System.out.println(helloText);
     }
 
+    @Override
+    public String getName() {
+        return this.name;
+    }
+
     public void eatLeaves()
     {
         eatText = "munch munch oink";
