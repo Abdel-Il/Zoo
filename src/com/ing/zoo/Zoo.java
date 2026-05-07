@@ -46,35 +46,44 @@ public class Zoo {
         System.out.print("Voer uw command in: ");
 
         String input = scanner.nextLine();
-        switch (input) {
+        String[] inputParts = input.split(" ");
+        String name = (inputParts.length > 1) ? inputParts[1]: null;
+        switch (inputParts[0]) {
             case "hello":
-                if (input.split(" ")[1] != null)
+                if (name == null)
                     for (Animal a : animals) {
                         a.sayHello();
                     } else {
                         for (Animal a : animals) {
-                            if (a.getName().equals(input.split(" ")[1])) {
+                            if (a.getName().equals(name)) {
                                 a.sayHello();
+                                break;
                             }
                         }
                 }
                 break;
-            case "give leaves":
-                for (Herbivore h : herbivores) {
-                    h.eatLeaves();
+            case "give":
+                if (name.equals("leaves")) {
+                    for (Herbivore h : herbivores) {
+                        h.eatLeaves();
+                    }
+                    for (Omnivore o : omnivores) {
+                        o.eatLeaves();
+                    }
+                    break;
                 }
-                for (Omnivore o : omnivores) {
-                    o.eatLeaves();
+
+                if (name.equals("meat")) {
+                    for (Carnivore c : carnivores) {
+                        c.eatMeat();
+                    }
+                    for (Omnivore o : omnivores) {
+                        o.eatMeat();
+                    }
+                    break;
                 }
-                break;
-            case "give meat":
-                for (Carnivore c : carnivores) {
-                    c.eatMeat();
-                }
-                for (Omnivore o : omnivores) {
-                    o.eatMeat();
-                }
-                break;
+            default:
+                System.out.println("Unknown command: " + input);
         }
     }
 }
