@@ -1,18 +1,21 @@
-package com.ing.zoo;
+package com.ing.zoo.animals;
 
-public class Lion extends Carnivore {
+import com.ing.zoo.resources.Herbivore;
+
+public class Zebra extends Herbivore {
     public String name;
     public String helloText;
     public String eatText;
+    public String trick;
 
-    public Lion(String name)
+    public Zebra(String name)
     {
         this.name = name;
     }
 
     public void sayHello()
     {
-        helloText = "roooaoaaaaar";
+        helloText = "zebra zebra";
         System.out.println(helloText);
     }
 
@@ -21,10 +24,9 @@ public class Lion extends Carnivore {
         return this.name;
     }
 
-    @Override
-    public void eatMeat()
+    public void eatLeaves()
     {
-        eatText = "nomnomnom thx mate";
+        eatText = "munch munch zank yee bra";
         System.out.println(eatText);
     }
 }

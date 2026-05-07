@@ -1,21 +1,20 @@
-package com.ing.zoo;
+package com.ing.zoo.animals;
 
-import java.util.Random;
+import com.ing.zoo.resources.Herbivore;
 
-public class Zebra extends Herbivore{
+public class Hippo extends Herbivore {
     public String name;
     public String helloText;
     public String eatText;
-    public String trick;
 
-    public Zebra(String name)
+    public Hippo(String name)
     {
         this.name = name;
     }
 
     public void sayHello()
     {
-        helloText = "zebra zebra";
+        helloText = "splash";
         System.out.println(helloText);
     }
 
@@ -26,7 +25,7 @@ public class Zebra extends Herbivore{
 
     public void eatLeaves()
     {
-        eatText = "munch munch zank yee bra";
+        eatText = "munch munch lovely";
         System.out.println(eatText);
     }
 }

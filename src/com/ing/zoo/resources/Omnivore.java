@@ -1,4 +1,4 @@
-package com.ing.zoo;
+package com.ing.zoo.resources;
 
 public abstract class Omnivore implements Animal{
 
