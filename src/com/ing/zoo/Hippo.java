@@ -5,8 +5,9 @@ public class Hippo extends Herbivore{
     public String helloText;
     public String eatText;
 
-    public Hippo()
+    public Hippo(String name)
     {
+        this.name = name;
     }
 
     public void sayHello()

@@ -2,14 +2,15 @@ package com.ing.zoo;
 
 import java.util.Random;
 
-public class Tiger extends Carnivore{
+public class Tiger extends Carnivore implements PerformTrick {
     public String name;
     public String helloText;
     public String eatText;
     public String trick;
 
-    public Tiger()
+    public Tiger(String name)
     {
+        this.name = name;
     }
 
     public void sayHello()

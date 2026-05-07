@@ -8,8 +8,9 @@ public class Zebra extends Herbivore{
     public String eatText;
     public String trick;
 
-    public Zebra()
+    public Zebra(String name)
     {
+        this.name = name;
     }
 
     public void sayHello()

@@ -5,8 +5,9 @@ public class Lion extends Carnivore {
     public String helloText;
     public String eatText;
 
-    public Lion()
+    public Lion(String name)
     {
+        this.name = name;
     }
 
     public void sayHello()
